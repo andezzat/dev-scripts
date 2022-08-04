@@ -9,7 +9,7 @@ set -o errexit -o nounset -o pipefail
 
 # 👇 Customize the types & scopes available here 👇
 TYPES="build chore ci docs feat fix perf refactor revert style test"
-SCOPES="react-app react-native-app graphql-api config-api"
+SCOPES=("react-app" "react-native-app" "graphql-api" "config-api")
 
 hash gum 2>/dev/null || {
   echo "🍺 Gum is missing, installing via Brew..."
@@ -74,7 +74,7 @@ typeset -u BRANCH
 ISSUE=${BRANCH%%/*}
 
 TYPE=$(echo ${TYPES// /\\n} | gum filter --indicator.foreground 129 --match.foreground 135 --prompt.foreground 135)
-SCOPE=$(gum choose --cursor.foreground 135 ${SCOPES// /\\n})
+SCOPE=$(gum choose --cursor.foreground 135 ${SCOPES[@]})
 ISSUE=$(gum input --cursor.foreground 135 --value $ISSUE)
 required "$ISSUE" "An issue #"
 
