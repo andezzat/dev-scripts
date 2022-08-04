@@ -4,7 +4,7 @@
 
 ## 🦸‍♂️ Super Commit
 
-**A simple bash script to help you write [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).**
+**A simple zsh script to help you write [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).**
 
 _Powered & inspired by [Gum](https://github.com/charmbracelet/gum)!_
 
