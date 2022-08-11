@@ -84,9 +84,9 @@ DESCRIPTION=$(gum write --cursor.foreground 135 --placeholder "Details of this c
 
 function commit() {
   if [[ -z $DESCRIPTION ]] then
-    git commit -S -m $SUMMARY
+    git commit -m $SUMMARY
   else
-    git commit -S -m $SUMMARY -m $DESCRIPTION
+    git commit -m $SUMMARY -m $DESCRIPTION
   fi
 
  [[ $? -eq 0 ]] && echo -e "\n✨ Commit created" || echo -e "\n💀 Something went wrong..."
